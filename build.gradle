@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'checkstyle'
+//    id 'checkstyle'
 }
 //to compile without checkstyle:
 //gradle build -x checkstylemain
