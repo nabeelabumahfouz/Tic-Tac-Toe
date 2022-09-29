@@ -1,37 +1,71 @@
 package tictactoe;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Runner {
-    
+
+
     public static void main(String[] args) {
-        
+
+        //Instances and Scanner(s):  DO I NEED PRIVATE INFRONT OF THEMMMMMM?!!!!??
+        Boolean Winner = false;
+        String PlayerToken = "X"; 
         Scanner myScanner = new Scanner(System.in);
-        String userInput = "0";
-        Integer counter = 0;
-
-        //Creating arraylist for board
-        ArrayList<Integer> integerList =  new ArrayList<>(); // make arraylist with positions; make a string builder string
-        Collections.addAll(integerList, 1,2,3,4,5,6,7,8,9);
-
-        //Creating arraylists for player moves that have been commited
-        static ArrayList<Integer> player1Turns = new ArrayList<>();
-        static ArrayList<Integer> player2Turns = new ArrayList<>();
-
-
-        //Populate THE GAMEBOARD!!!!!! (how would I add the lines?)
-
-
-        while (true){
         
-            System.out.println("Please enter a number between 1-9 for your Position: ");
-            int player1Turns = scanner.nextInt();
-            
-            //Determining if player has same move as the other
-            if Player
 
+        //Creating Arraylists to Keep knowledge positions on boards is taken and to hold the tictactoe board:
+        ArrayList<String> StringList =  new ArrayList<>();
+        ArrayList<Integer> PlayerMovements = new ArrayList<>();
+
+        //Method Calls:
+        Board gameboard = new Board();
+        EndGame Check = new EndGame();
+          
+        //Initializing the Numbers to the board
+        gameboard.initializeStringList(StringList);
+        
+        
+        //Drawing Board
+        gameboard.DrawBoard(StringList);
+        
+        
+        
+        //Where Game Begins:
+        while (Winner != true){
+
+            Check.Welcome(PlayerToken);
+            System.out.println("Please enter a number between 1-9 for your Position: ");
+            int playerTurn = myScanner.nextInt();
+
+            //Checking to see if position is already taken or move entered is illegal: (DO I NEED TO CHECK FOR LETTERS?)
+            while( playerTurn > 9 || playerTurn < 1 || PlayerMovements.contains(playerTurn) ){
+                System.out.println("\n\nSorry that position is taken or out of bounds! Please Choose an Open Valid Position: ");
+                playerTurn = myScanner.nextInt();
+            }
+            //Appending most recent player turn into positions that are taken:
+            PlayerMovements.add(playerTurn);
+
+            //
+            gameboard.PlacementOnBoard(playerTurn, StringList, PlayerToken);
+            //
+            gameboard.DrawBoard(StringList);
+            //
+            gameboard.setTurn(PlayerToken);
+            PlayerToken = gameboard.getTurn();
+
+            //Checking Vertical Win
+            Check.VerticalWinner(StringList, Winner);
+
+            //Checking Horizontal Win
+            Check.HorizontalWinner(StringList, Winner);
+
+            //Checking Diagonal Win
+            Check.DiagonalWinner(StringList, Winner);
+            
+            //Checking If It's a Tie:
+            Check.setTieGame(PlayerMovements, Winner);
+            Winner = Check.getTieGame();            
+            
         }
 
     }
