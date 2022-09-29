@@ -7,16 +7,16 @@ public class Board {
 
     private String PlayerTurn = "X";
 
-    //Initializing String Board
+    //Initializing String Board:
     public void initializeStringList(ArrayList<String> myString){
 
         for (int i = 0; i < 9; i++){
+
             myString.add( Integer.toString(i+1) ); 
+
         }
 
     }
-
-
 
     //Drawing Board:
     public void DrawBoard(ArrayList<String> myString) {
@@ -27,9 +27,11 @@ public class Board {
 
     }
     
-    //Placing things on gameboard (i.e. swapping Numbers with Tokens)
+    //Placing things on gameboard (i.e. swapping Numbers with Tokens):
     public void PlacementOnBoard(Integer UserInput, ArrayList<String> myString, String PlayerToken) {
+
         myString.set(UserInput - 1,  PlayerToken); 
+
     }
 
 
@@ -38,39 +40,25 @@ public class Board {
     public void setTurn(String turn){
 
         if (turn == "X") {
+
             turn = "O";
-        } else {
+
+        } 
+        else{
+
             turn = "X";
-          }
+
+        }
+
         this.PlayerTurn = turn;
 
     }
 
     public String getTurn(){
+
         return PlayerTurn;
+
     }
 
-
-    
-    
-
-
-    //Switch case to switch token with #'s (is there a more clean code way of doing this?)
-    
- 
-    //Horiontal win conditions
-    //123, 456, 789
-
-
-    //Vertical win conditions
-    //147,258,369
-
-    //Diagnoal win conditions
-    //159, 357
 }
-    
-
-
-
-///// HOW DO I PROPERLY pass through an arraylist function arguement???
 
