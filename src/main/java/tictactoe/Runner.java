@@ -78,12 +78,3 @@ public class Runner {
 
     }
 }
-
-
-
-
-
-//Ask about Readme project title
-//Ask about Comments in code
-//Ask if I need descriptions at top of code even if I explained every fcn
-//Ask if code review looks fine
