@@ -6,8 +6,7 @@ public class Runner {
 
 
     public static void main(String[] args) {
-
-        //Instances and scanner(s):  DO I NEED PRIVATE INFRONT OF THEMMMMMM?!!!!??
+ 
         Boolean Winner = false;
         String PlayerToken = "X"; 
         Scanner myScanner = new Scanner(System.in);
@@ -17,7 +16,7 @@ public class Runner {
         ArrayList<String> StringList =  new ArrayList<>();
         ArrayList<Integer> PlayerMovements = new ArrayList<>();
 
-        //Method calls: (RENAMEEEE):
+        //Creating an Object for Specified classes:
         Board gameboard = new Board();
         EndGame Check = new EndGame();
           
@@ -35,13 +34,17 @@ public class Runner {
 
             Check.Welcome(PlayerToken);
             System.out.println("Please enter a number between 1-9 for your Position: ");
-            int playerTurn = myScanner.nextInt();
+             
+            String play = myScanner.next();
+            int playerTurn = gameboard.checkPlayerTurn(play);
+            
 
-            //Checking to see if position is already taken or move entered is illegal: (DO I NEED TO CHECK FOR LETTERS?)
+            //Checking to see if position is already taken or move entered is illegal:
             while( playerTurn > 9 || playerTurn < 1 || PlayerMovements.contains(playerTurn) ){
 
                 System.out.println("\n\nSorry that position is taken or out of bounds! Please Choose an Open Valid Position: ");
-                playerTurn = myScanner.nextInt();
+                play = myScanner.next();
+                playerTurn = gameboard.checkPlayerTurn(play);
 
             }
 
@@ -54,7 +57,7 @@ public class Runner {
             //Redrawing board with new player position:
             gameboard.DrawBoard(StringList);
 
-            //Using (Setter/Getter - FIND REAL NAME!!!!!) to switch player token:
+            //Using () to switch player token:
             gameboard.setTurn(PlayerToken);
             PlayerToken = gameboard.getTurn();
 
@@ -80,3 +83,7 @@ public class Runner {
 
 
 
+//Ask about Readme project title
+//Ask about Comments in code
+//Ask if I need descriptions at top of code even if I explained every fcn
+//Ask if code review looks fine

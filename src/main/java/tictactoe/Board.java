@@ -60,5 +60,24 @@ public class Board {
 
     }
 
+
+    //Checking to see if player input was a string and not an integer
+    public Integer checkPlayerTurn(String play){
+
+        Integer playerTurn = 0;
+
+        try { 
+                
+            playerTurn = Integer.parseInt(play); 
+    
+        }  
+        catch (NumberFormatException e){ 
+            return 0;
+        } 
+
+        return playerTurn;
+
+    }
+
 }
 

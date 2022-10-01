@@ -21,7 +21,7 @@ public class EndGame {
 
 
     //Horizontal Win Conditions:
-    public Boolean HorizontalWinner(ArrayList<String> myString, Boolean Winner){ //better way??????????
+    public Boolean HorizontalWinner(ArrayList<String> myString, Boolean Winner){
 
         for (int i = 0; i < myString.size(); i = i + 3){
 
@@ -101,7 +101,7 @@ public class EndGame {
     }
 
 
-    //Checking to see if its a Tie Game (Setter - GET OTHER TERM):
+    //Checking to see if its a Tie Game (Mutator):
     public void setTieGame(ArrayList<Integer> PlayerMovements, Boolean Winner){
 
         if (PlayerMovements.size() == 9){
@@ -113,7 +113,7 @@ public class EndGame {
     }
 
     
-    //Checking to see if its a Tie Game (Getter - GET OTHER TERM):
+    //Checking to see if its a Tie Game (Accessor):
     public Boolean getTieGame(){
 
         return Winner;

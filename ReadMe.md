@@ -1,4 +1,4 @@
-# Project Title (????)
+# Project Title
 
 Nabeel_Abu-Mahfouz's Object Oriented Two Player TicTacToe Game.
 
@@ -45,7 +45,7 @@ Name: Nabeel Abu-Mahfouz
 Student ID: 1104136
 Email: nabumahf@uoguelph.ca
 
-## Development History (How should these look like)
+## Development History 
 
 * 0.3
     * Assignment complete
@@ -63,6 +63,8 @@ Email: nabumahf@uoguelph.ca
 
 * [awesome-readme](https://github.com/matiassingers/awesome-readme)
 * [simple-readme] (https://gist.githubusercontent.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc/raw/d59043abbb123089ad6602aba571121b71d91d7f/README-Template.md)
+* [Studytonight.com] (https://www.studytonight.com/java-examples/check-if-input-is-integer-in-java#:~:text=integer%20using%20Scanner.-,hasNextInt()%20method,otherwise%20it%20will%20return%20false)
+
 
 
 
